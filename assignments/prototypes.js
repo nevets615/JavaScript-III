@@ -64,6 +64,15 @@ Humanoid.prototype = Object.create(CharacterStats.prototype);
 Humanoid.prototype.greet = function() {
   return `${this.name} offers a greeting in ${this.language}.`;
 };
+function Hero(attributes) {
+Humanoid.call(this,attributes)
+}
+
+
+
+function Villain(attributes) {
+  Humanoid.call(this,attributes)
+}
 /*
  * Inheritance chain: GameObject -> CharacterStats -> Humanoid
  * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
@@ -112,6 +121,34 @@ const archer = new Humanoid({
   team: "Forest Kingdom",
   weapons: ["Bow", "Dagger"],
   language: "Elvish"
+});
+
+const hero = new Humanoid({
+  createdAt: new Date(),
+  dimensions: {
+    length: 8,
+    width: 3,
+    height: 6
+  },
+  healthPoints: 10,
+  name: "steven",
+  team: "panthers",
+  weapons: ["magic"],
+  language: "english"
+});
+
+const villain = new Humanoid({
+  createdAt: new Date(),
+  dimensions: {
+    length: 1,
+    width: 1,
+    height: 1
+  },
+  healthPoints: 10,
+  name: "nevets",
+  team: "saints",
+  weapons: ["throwing star"],
+  language: "french"
 });
 
 console.log(mage.createdAt); // Today's date
